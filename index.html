@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e13">
+  <meta name="description" content="Shahin is a Unity and C# game development learner building 2D and 3D games. Explore Peakbound, Last Descent, and Meet Me at Dusk.">
+  <meta property="og:title" content="Shahin — Unity Game Developer">
+  <meta property="og:description" content="Unity and C# game developer building 2D and 3D worlds.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/title-screen.png">
+  <title>Shahin — Unity Game Developer</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b0e13;
+      --surface: #11161e;
+      --surface-2: #171d27;
+      --line: #29313d;
+      --text: #f2f4f7;
+      --muted: #a3adba;
+      --soft: #768292;
+      --lime: #b7f36a;
+      --lime-ink: #151d0e;
+      --orange: #ffb86b;
+      --max: 1160px;
+      --radius: 18px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 82% 5%, rgba(68, 92, 117, .14), transparent 38rem),
+        var(--bg);
+      color: var(--text);
+      font: 16px/1.65 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .skip {
+      position: absolute; left: 16px; top: -60px; z-index: 100;
+      background: var(--lime); color: var(--lime-ink); padding: 10px 14px; border-radius: 8px;
+    }
+    .skip:focus { top: 12px; }
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(11, 14, 19, .88); border-bottom: 1px solid rgba(255,255,255,.07);
+      backdrop-filter: blur(16px);
+    }
+    .nav { height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 750; letter-spacing: -.03em; }
+    .brand-mark {
+      width: 34px; height: 34px; display: grid; place-items: center;
+      border: 1px solid rgba(183,243,106,.55); border-radius: 10px;
+      color: var(--lime); font-size: 15px; font-weight: 800; transform: rotate(-4deg);
+    }
+    .brand-name { font-size: 15px; }
+    .brand-role { margin-left: 8px; color: var(--soft); font-size: 11px; font-weight: 650; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 32px; color: #c2cad3; font-size: 13px; font-weight: 600; }
+    .nav-links a:hover { color: var(--lime); }
+    .nav-cta, .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-height: 46px; padding: 0 18px; border: 1px solid var(--line); border-radius: 999px;
+      color: var(--text); font-size: 13px; font-weight: 700; transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); border-color: #536171; }
+    .nav-cta { min-height: 40px; padding-inline: 15px; }
+    .button-primary { background: var(--lime); border-color: var(--lime); color: var(--lime-ink); }
+    .button-primary:hover { background: #c9f792; border-color: #c9f792; }
+    .button-quiet { background: rgba(255,255,255,.025); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: none; color: var(--text); border-radius: 10px; padding: 9px 12px; font: inherit; }
+
+    .hero { padding: 92px 0 80px; }
+    .hero-grid { display: grid; grid-template-columns: 1.06fr .94fr; align-items: center; gap: clamp(42px, 7vw, 88px); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; margin: 0 0 23px;
+      color: var(--lime); font-size: 11px; font-weight: 750; letter-spacing: .15em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 5px rgba(183,243,106,.10); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 720px; margin-bottom: 22px; font-size: clamp(44px, 6vw, 76px); font-weight: 690; line-height: 1.04; letter-spacing: -.064em; }
+    h1 span { color: var(--lime); }
+    .hero-copy { max-width: 580px; margin-bottom: 28px; color: #b3bdc9; font-size: clamp(16px, 1.5vw, 18px); line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
+    .tag {
+      padding: 6px 11px; border: 1px solid var(--line); border-radius: 999px;
+      color: #c3ccd6; font-size: 11px; font-weight: 650; letter-spacing: .02em;
+    }
+    .hero-art { position: relative; isolation: isolate; }
+    .hero-frame {
+      position: relative; overflow: hidden; aspect-ratio: 1.11;
+      border: 1px solid #323c49; border-radius: 24px; background: #111820;
+      box-shadow: 0 28px 80px rgba(0,0,0,.40);
+    }
+    .hero-frame::after {
+      content: ""; position: absolute; inset: 35% 0 0;
+      background: linear-gradient(transparent, rgba(8,11,15,.92));
+    }
+    .hero-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: .88; }
+    .art-kicker {
+      position: absolute; left: 20px; top: 20px; z-index: 2; display: flex; align-items: center; gap: 8px;
+      padding: 7px 11px; border: 1px solid rgba(255,255,255,.16); border-radius: 999px;
+      background: rgba(10,14,19,.64); color: #ecf1f5; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+    .art-kicker::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--lime); }
+    .art-caption { position: absolute; left: 24px; right: 24px; bottom: 20px; z-index: 2; display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+    .art-caption strong { display: block; font-size: 19px; letter-spacing: -.02em; }
+    .art-caption span { display: block; margin-top: 3px; color: #c3ccd6; font-size: 12px; }
+    .art-arrow { display: grid; width: 40px; height: 40px; flex: 0 0 auto; place-items: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; }
+    .art-note {
+      position: absolute; right: -20px; bottom: 54px; z-index: 3; max-width: 220px;
+      padding: 16px 18px; border: 1px solid #313a46; border-radius: 14px;
+      background: #141a22; box-shadow: 0 14px 35px rgba(0,0,0,.32);
+    }
+    .art-note small { display: block; margin-bottom: 3px; color: var(--lime); font-size: 9px; font-weight: 750; letter-spacing: .15em; text-transform: uppercase; }
+    .art-note strong { display: block; font-size: 13px; line-height: 1.4; }
+    .section { padding: 82px 0; border-top: 1px solid rgba(255,255,255,.075); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 30px; }
+    .section-label { margin-bottom: 9px; color: var(--lime); font-size: 10px; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { margin-bottom: 0; font-size: clamp(31px, 4vw, 43px); font-weight: 680; line-height: 1.13; letter-spacing: -.045em; }
+    .section-intro { max-width: 380px; margin-bottom: 2px; color: var(--muted); font-size: 14px; }
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .project {
+      overflow: hidden; min-width: 0; border: 1px solid var(--line); border-radius: var(--radius);
+      background: linear-gradient(160deg, rgba(255,255,255,.025), transparent 50%), var(--surface);
+      transition: transform .22s ease, border-color .22s ease;
+    }
+    .project:hover { transform: translateY(-5px); border-color: #4d5b69; }
+    .project-image { position: relative; overflow: hidden; aspect-ratio: 1.63; background: #161d27; }
+    .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+    .project:hover .project-image img { transform: scale(1.035); }
+    .project-image::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(10,13,18,.38)); pointer-events: none; }
+    .project-content { padding: 20px 20px 18px; }
+    .project-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .project-type { color: var(--lime); font-size: 10px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .project-number { color: #687484; font-size: 11px; font-variant-numeric: tabular-nums; }
+    .project h3 { margin-bottom: 7px; font-size: 21px; font-weight: 670; letter-spacing: -.035em; }
+    .project p { min-height: 76px; margin-bottom: 17px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .project-link { display: inline-flex; align-items: center; gap: 8px; color: #e8edf3; font-size: 12px; font-weight: 700; }
+    .project-link span { color: var(--lime); transition: transform .2s ease; }
+    .project-link:hover span { transform: translate(3px, -3px); }
+    .about-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(40px, 8vw, 100px); align-items: start; }
+    .about-copy { max-width: 610px; color: #b0bac6; font-size: 15px; line-height: 1.85; }
+    .about-copy p { margin-bottom: 18px; }
+    .about-copy strong { color: var(--text); font-weight: 650; }
+    .about-side { display: grid; gap: 12px; }
+    .about-card { padding: 20px 21px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .about-card-label { margin-bottom: 7px; color: var(--soft); font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+    .about-card p { margin-bottom: 0; color: #e4e9ef; font-size: 14px; }
+    .interest-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 11px; }
+    .interest-list span { padding: 5px 9px; border-radius: 7px; background: var(--surface-2); color: #d5dce4; font-size: 11px; }
+    .opportunity { padding: 0 0 84px; }
+    .opportunity-panel {
+      display: flex; align-items: center; justify-content: space-between; gap: 35px;
+      padding: clamp(27px, 5vw, 48px); border: 1px solid #34422a; border-radius: 22px;
+      background: radial-gradient(ellipse at 95% 10%, rgba(183,243,106,.13), transparent 35rem), #111820;
+    }
+    .opportunity-panel h2 { max-width: 620px; margin-bottom: 12px; font-size: clamp(29px, 4vw, 40px); }
+    .opportunity-panel p { max-width: 650px; margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .opportunity-panel .button { flex: 0 0 auto; }
+    .footer { border-top: 1px solid rgba(255,255,255,.075); }
+    .footer-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--soft); font-size: 11px; }
+    .footer-links { display: flex; gap: 20px; color: #b5bec9; }
+    .footer-links a:hover { color: var(--lime); }
+
+    @media (max-width: 900px) {
+      .hero { padding-top: 72px; }
+      .hero-grid { grid-template-columns: 1fr .88fr; gap: 35px; }
+      .art-note { right: -8px; }
+      .projects { grid-template-columns: repeat(2, 1fr); }
+      .project:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: .95fr 1.05fr; }
+      .project:last-child .project-image { height: 100%; aspect-ratio: auto; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(var(--max), calc(100% - 34px)); }
+      .nav { height: 68px; }
+      .brand-role { display: none; }
+      .menu-toggle { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 12px; }
+      .nav-links {
+        display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 14px 17px 18px;
+        flex-direction: column; align-items: stretch; gap: 0; border-bottom: 1px solid var(--line);
+        background: #0e1218;
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { padding: 12px 5px; }
+      .nav-cta { margin-top: 8px; }
+      .hero { padding: 55px 0 62px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      h1 { font-size: clamp(43px, 13vw, 62px); }
+      .hero-copy { font-size: 15px; }
+      .hero-frame { aspect-ratio: 1.08; }
+      .art-note { right: 9px; bottom: 15px; max-width: 190px; padding: 12px 14px; }
+      .section { padding: 62px 0; }
+      .section-heading { display: block; margin-bottom: 22px; }
+      .section-intro { margin-top: 12px; }
+      .projects { grid-template-columns: 1fr; gap: 14px; }
+      .project:last-child { display: block; grid-column: auto; }
+      .project:last-child .project-image { aspect-ratio: 1.63; }
+      .project p { min-height: auto; }
+      .about-grid { grid-template-columns: 1fr; gap: 25px; }
+      .opportunity { padding-bottom: 62px; }
+      .opportunity-panel { display: block; }
+      .opportunity-panel .button { margin-top: 22px; }
+      .footer-inner { min-height: 88px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 7px; padding-block: 17px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Shahin, home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">Shahin<span class="brand-role">Game Developer</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu <span aria-hidden="true">☰</span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="#work">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Opportunity</a>
+        <a class="nav-cta" href="https://github.com/shaahinnn" target="_blank" rel="noopener noreferrer">GitHub profile <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Open to game developer opportunities</p>
+          <h1>Unity game developer <span>building worlds to play.</span></h1>
+          <p class="hero-copy">I’m Shahin, learning game development by turning ideas into 2D and 3D projects with Unity and C#. I’m looking for an opportunity to contribute, learn from a team, and grow as a game developer.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore my projects <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="https://github.com/shaahinnn" target="_blank" rel="noopener noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-tags" aria-label="Tools and experience">
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">2D &amp; 3D projects</span>
+          </div>
+        </div>
+        <div class="hero-art">
+          <a class="hero-frame" href="https://github.com/shaahinnn/Last-Descent" target="_blank" rel="noopener noreferrer" aria-label="View Last Descent on GitHub">
+            <span class="art-kicker">Featured · 3D Unity project</span>
+            <img src="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/title-screen.png" alt="Last Descent title screen, a shuttle in a blue-lit futuristic space colony" fetchpriority="high">
+            <span class="art-caption">
+              <span><strong>Last Descent</strong><span>Explore a neon-lit sci-fi colony</span></span>
+              <span class="art-arrow" aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <div class="art-note"><small>Currently building</small><strong>Playable ideas with Unity &amp; C#</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Selected work</p>
+            <h2>Games I’ve been building</h2>
+          </div>
+          <p class="section-intro">A hands-on learning journey through movement, atmosphere, and playful challenges.</p>
+        </div>
+        <div class="projects">
+          <article class="project">
+            <a class="project-image" href="https://github.com/shaahinnn/Last-Descent" target="_blank" rel="noopener noreferrer" aria-label="Open Last Descent repository">
+              <img src="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/gameplay-platforms.png" alt="Small astronaut navigating glowing platforms in a futuristic colony" loading="lazy">
+            </a>
+            <div class="project-content">
+              <div class="project-meta"><span class="project-type">3D · Sci-fi</span><span class="project-number">01 / 03</span></div>
+              <h3>Last Descent</h3>
+              <p>A 3D Unity sci-fi game set in a futuristic space colony. Explore neon-lit habitats, elevated platforms, and darker industrial areas.</p>
+              <a class="project-link" href="https://github.com/shaahinnn/Last-Descent" target="_blank" rel="noopener noreferrer">Explore the project <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project">
+            <a class="project-image" href="https://github.com/shaahinnn/Meet-Me-at-Dusk" target="_blank" rel="noopener noreferrer" aria-label="Open Meet Me at Dusk repository">
+              <img src="https://raw.githubusercontent.com/shaahinnn/Meet-Me-at-Dusk/main/Screenshots/gameplay-hazards.png" alt="Pixel-art platforming challenge above spike pits in a medieval town at dusk" loading="lazy">
+            </a>
+            <div class="project-content">
+              <div class="project-meta"><span class="project-type">2D · Pixel art</span><span class="project-number">02 / 03</span></div>
+              <h3>Meet Me at Dusk</h3>
+              <p>A pixel-art platformer in a lantern-lit medieval town. Collect coins and treasure while crossing dangerous platforms and avoiding traps.</p>
+              <a class="project-link" href="https://github.com/shaahinnn/Meet-Me-at-Dusk" target="_blank" rel="noopener noreferrer">Explore the project <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project">
+            <a class="project-image" href="https://github.com/shaahinnn/Peakbound" target="_blank" rel="noopener noreferrer" aria-label="Open Peakbound repository">
+              <img src="https://raw.githubusercontent.com/shaahinnn/Peakbound/main/Screenshots/gameplay-hills.png" alt="Red car climbing a grassy hill in Peakbound with fuel and coin counters" loading="lazy">
+            </a>
+            <div class="project-content">
+              <div class="project-meta"><span class="project-type">2D · Driving</span><span class="project-number">03 / 03</span></div>
+              <h3>Peakbound</h3>
+              <p>A hill-climb driving game. Steer a red car across rolling hills and rocky paths, collect coins, and keep an eye on the fuel.</p>
+              <a class="project-link" href="https://github.com/shaahinnn/Peakbound" target="_blank" rel="noopener noreferrer">Explore the project <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <p class="section-label">A little about me</p>
+          <h2>Learning by making games.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I’m building my foundation in <strong>Unity and C#</strong> through personal projects in both 2D and 3D. Each game gives me a chance to learn by making something playable and sharing the work in public.</p>
+          <p>I’m drawn to action-adventure games like <strong>Assassin’s Creed</strong> and <strong>Prince of Persia</strong>, and to horror games that use atmosphere to keep players curious. I hope to create a game in those genres in the future.</p>
+          <div class="about-side">
+            <div class="about-card">
+              <p class="about-card-label">Tools</p>
+              <p>Unity · C#</p>
+            </div>
+            <div class="about-card">
+              <p class="about-card-label">Game interests</p>
+              <p>Worlds and mechanics I’d love to explore more</p>
+              <div class="interest-list"><span>Action-adventure</span><span>Platformers</span><span>Atmospheric horror</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="opportunity wrap" id="contact">
+      <div class="opportunity-panel">
+        <div>
+          <p class="section-label">Next level</p>
+          <h2>Looking for a place to grow and contribute.</h2>
+          <p>I’m interested in junior game developer opportunities where I can keep learning, work with a team, and help bring thoughtful gameplay ideas to life.</p>
+        </div>
+        <a class="button button-primary" href="https://github.com/shaahinnn" target="_blank" rel="noopener noreferrer">Connect on GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year">2026</span> Shahin · Unity &amp; C# game development</span>
+      <div class="footer-links">
+        <a href="https://github.com/shaahinnn" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const links = document.querySelector("#nav-links");
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      links.classList.toggle("is-open", !open);
+    });
+    links.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.setAttribute("aria-expanded", "false");
+        links.classList.remove("is-open");
+      });
+    });
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
