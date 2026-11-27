@@ -135,6 +135,8 @@
     .project-type { color: var(--lime); font-size: 10px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
     .project-number { color: #687484; font-size: 11px; font-variant-numeric: tabular-nums; }
     .project h3 { margin-bottom: 7px; font-size: 21px; font-weight: 670; letter-spacing: -.035em; }
+    .project h3 a:hover { color: var(--lime); }
+    .project-open { color: var(--lime); }
     .project p { min-height: 76px; margin-bottom: 17px; color: var(--muted); font-size: 13px; line-height: 1.65; }
     .project-link { display: inline-flex; align-items: center; gap: 8px; color: #e8edf3; font-size: 12px; font-weight: 700; }
     .project-actions { display: flex; flex-wrap: wrap; gap: 14px; }
@@ -282,107 +284,51 @@
         </div>
         <div class="projects">
           <article class="project">
-            <a class="project-image" href="https://github.com/shaahinnn/Operation-Wild-Run" target="_blank" rel="noopener noreferrer" aria-label="Open Operation – Wild Run repository">
+            <a class="project-image" href="/projects/operation-wild-run/" aria-label="View Operation – Wild Run">
               <img src="https://raw.githubusercontent.com/shaahinnn/Operation-Wild-Run/main/Screenshots/gameplay-jungle-65m.png" alt="Runner approaching obstacles on a jungle track in Operation – Wild Run" loading="lazy">
             </a>
             <div class="project-content">
               <div class="project-meta"><span class="project-type">3D · Runner</span><span class="project-number">01 / 04</span></div>
-              <h3>Operation – Wild Run</h3>
+              <h3><a href="/projects/operation-wild-run/">Operation – Wild Run</a></h3>
               <p>A 3D Unity lane-based runner featuring lane switching, jumping, sliding, obstacle patterns, and distance-based difficulty.</p>
-              <div class="project-actions"><a class="project-link" href="https://github.com/shaahinnn/Operation-Wild-Run" target="_blank" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a></div>
+              <a class="project-link project-open" href="/projects/operation-wild-run/">View project <span aria-hidden="true">↗</span></a>
             </div>
-            <details class="project-details">
-              <summary>Technical breakdown, gallery &amp; demo</summary>
-              <div class="project-detail-body">
-                <div class="project-detail-columns">
-                  <div><h4>Gameplay systems</h4><ul><li>Three-lane movement with jump and slide actions; collider and animation state change with the move.</li><li>LevelGenerator advances track chunks, while Chunk builds obstacle encounters and carries reachable safe lanes between rows.</li><li>DistanceManager feeds run progress into speed and hazard difficulty, and saves the best distance.</li></ul></div>
-                  <div><h4>Challenge</h4><p>Keep the obstacle route readable as difficulty rises. Route generation carries safe-lane choices forward and increases hazard chances with distance.</p><h4>Related code</h4><div class="project-code-links"><a href="https://github.com/shaahinnn/Operation-Wild-Run/blob/main/Assets/Scripts/PlayerControl.cs" target="_blank" rel="noopener noreferrer">PlayerControl.cs</a><a href="https://github.com/shaahinnn/Operation-Wild-Run/blob/main/Assets/Scripts/LevelGenerator.cs" target="_blank" rel="noopener noreferrer">LevelGenerator.cs</a><a href="https://github.com/shaahinnn/Operation-Wild-Run/blob/main/Assets/Scripts/Chunk.cs" target="_blank" rel="noopener noreferrer">Chunk.cs</a><a href="https://github.com/shaahinnn/Operation-Wild-Run/blob/main/Assets/Scripts/DistanceManager.cs" target="_blank" rel="noopener noreferrer">DistanceManager.cs</a></div></div>
-                </div>
-                <div class="project-gallery" aria-label="Operation – Wild Run screenshot gallery"><a href="https://raw.githubusercontent.com/shaahinnn/Operation-Wild-Run/main/Screenshots/title-screen.png" target="_blank" rel="noopener noreferrer" aria-label="Open Operation – Wild Run screenshot: Title screen"><img src="https://raw.githubusercontent.com/shaahinnn/Operation-Wild-Run/main/Screenshots/title-screen.png" alt="Operation – Wild Run: Title screen" loading="lazy"></a><a href="https://raw.githubusercontent.com/shaahinnn/Operation-Wild-Run/main/Screenshots/gameplay-outpost-368m.png" target="_blank" rel="noopener noreferrer" aria-label="Open Operation – Wild Run screenshot: Outpost run"><img src="https://raw.githubusercontent.com/shaahinnn/Operation-Wild-Run/main/Screenshots/gameplay-outpost-368m.png" alt="Operation – Wild Run: Outpost run" loading="lazy"></a><a href="https://raw.githubusercontent.com/shaahinnn/Operation-Wild-Run/main/Screenshots/gameplay-cave-352m.png" target="_blank" rel="noopener noreferrer" aria-label="Open Operation – Wild Run screenshot: Cave route"><img src="https://raw.githubusercontent.com/shaahinnn/Operation-Wild-Run/main/Screenshots/gameplay-cave-352m.png" alt="Operation – Wild Run: Cave route" loading="lazy"></a></div>
-                <video class="project-video" controls preload="none" poster="https://raw.githubusercontent.com/shaahinnn/Operation-Wild-Run/main/Screenshots/gameplay-jungle-590m.png" aria-label="Operation – Wild Run gameplay demo">
-                  <source src="https://github.com/shaahinnn/Operation-Wild-Run/releases/download/demo-v1.0/Operation.-.Wild.Run.mp4" type="video/mp4">
-                  Your browser does not support video playback.
-                </video>
-              </div>
-            </details>
           </article>
 
           <article class="project">
-            <a class="project-image" href="https://github.com/shaahinnn/Peakbound" target="_blank" rel="noopener noreferrer" aria-label="Open Peakbound repository">
+            <a class="project-image" href="/projects/peakbound/" aria-label="View Peakbound">
               <img src="https://raw.githubusercontent.com/shaahinnn/Peakbound/main/Screenshots/gameplay-hills.png" alt="Red car climbing a grassy hill in Peakbound with fuel and coin counters" loading="lazy">
             </a>
             <div class="project-content">
               <div class="project-meta"><span class="project-type">2D · Driving</span><span class="project-number">02 / 04</span></div>
-              <h3>Peakbound</h3>
+              <h3><a href="/projects/peakbound/">Peakbound</a></h3>
               <p>A hill-climb driving game. Steer a red car across rolling hills and rocky paths, collect coins, and keep an eye on the fuel.</p>
-              <div class="project-actions"><a class="project-link" href="https://github.com/shaahinnn/Peakbound" target="_blank" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a></div>
+              <a class="project-link project-open" href="/projects/peakbound/">View project <span aria-hidden="true">↗</span></a>
             </div>
-            <details class="project-details">
-              <summary>Technical breakdown, gallery &amp; demo</summary>
-              <div class="project-detail-body">
-                <div class="project-detail-columns">
-                  <div><h4>Gameplay systems</h4><ul><li>PlayerController reads the Input System and controls the car through Rigidbody2D movement with a tyre-ground contact check.</li><li>Coin triggers award score and feedback; FuelController drains fuel, updates warnings, and ends the run when fuel is empty.</li><li>HUD reflects score and fuel state during the drive.</li></ul></div>
-                  <div><h4>Challenge</h4><p>Connect driving, pickups, and fuel pressure to clear run feedback through score, warning, audio, and game-over states.</p><h4>Related code</h4><div class="project-code-links"><a href="https://github.com/shaahinnn/Peakbound/blob/main/Assets/Scripts/PlayerController.cs" target="_blank" rel="noopener noreferrer">PlayerController.cs</a><a href="https://github.com/shaahinnn/Peakbound/blob/main/Assets/Scripts/CoinCollect.cs" target="_blank" rel="noopener noreferrer">CoinCollect.cs</a><a href="https://github.com/shaahinnn/Peakbound/blob/main/Assets/Scripts/ScoreManager.cs" target="_blank" rel="noopener noreferrer">ScoreManager.cs</a><a href="https://github.com/shaahinnn/Peakbound/blob/main/Assets/Scripts/FuelController.cs" target="_blank" rel="noopener noreferrer">FuelController.cs</a></div></div>
-                </div>
-                <div class="project-gallery" aria-label="Peakbound screenshot gallery"><a href="https://raw.githubusercontent.com/shaahinnn/Peakbound/main/Screenshots/title-screen.png" target="_blank" rel="noopener noreferrer" aria-label="Open Peakbound screenshot: Title screen"><img src="https://raw.githubusercontent.com/shaahinnn/Peakbound/main/Screenshots/title-screen.png" alt="Peakbound: Title screen" loading="lazy"></a><a href="https://raw.githubusercontent.com/shaahinnn/Peakbound/main/Screenshots/gameplay-cave.png" target="_blank" rel="noopener noreferrer" aria-label="Open Peakbound screenshot: Rocky route"><img src="https://raw.githubusercontent.com/shaahinnn/Peakbound/main/Screenshots/gameplay-cave.png" alt="Peakbound: Rocky route" loading="lazy"></a><a href="https://raw.githubusercontent.com/shaahinnn/Peakbound/main/Screenshots/low-fuel.png" target="_blank" rel="noopener noreferrer" aria-label="Open Peakbound screenshot: Low-fuel warning"><img src="https://raw.githubusercontent.com/shaahinnn/Peakbound/main/Screenshots/low-fuel.png" alt="Peakbound: Low-fuel warning" loading="lazy"></a></div>
-                <video class="project-video" controls preload="none" poster="https://raw.githubusercontent.com/shaahinnn/Peakbound/main/Screenshots/gameplay-hills.png" aria-label="Peakbound gameplay demo">
-                  <source src="https://github.com/shaahinnn/Peakbound/releases/download/demo-v1.0/PeakBound.mp4" type="video/mp4">
-                  Your browser does not support video playback.
-                </video>
-              </div>
-            </details>
           </article>
 
           <article class="project">
-            <a class="project-image" href="https://github.com/shaahinnn/Last-Descent" target="_blank" rel="noopener noreferrer" aria-label="Open Last Descent repository">
+            <a class="project-image" href="/projects/last-descent/" aria-label="View Last Descent">
               <img src="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/gameplay-platforms.png" alt="Small astronaut navigating glowing platforms in a futuristic colony" loading="lazy">
             </a>
             <div class="project-content">
               <div class="project-meta"><span class="project-type">3D · Sci-fi</span><span class="project-number">03 / 04</span></div>
-              <h3>Last Descent</h3>
+              <h3><a href="/projects/last-descent/">Last Descent</a></h3>
               <p>A 3D Unity sci-fi game set in a futuristic space colony. Explore neon-lit habitats, elevated platforms, and darker industrial areas.</p>
-              <div class="project-actions"><a class="project-link" href="https://github.com/shaahinnn/Last-Descent" target="_blank" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a></div>
+              <a class="project-link project-open" href="/projects/last-descent/">View project <span aria-hidden="true">↗</span></a>
             </div>
-            <details class="project-details">
-              <summary>Technical breakdown, gallery &amp; demo</summary>
-              <div class="project-detail-body">
-                <div class="project-detail-columns">
-                  <div><h4>Gameplay systems</h4><ul><li>Movement reads thrust and rotation input actions and applies thrust through a Rigidbody with booster, particle, and audio feedback.</li><li>CollisionHandler tracks health and manages hazard, finish, win, and failure outcomes.</li><li>Oscillator moves configured level objects between endpoints.</li></ul></div>
-                  <div><h4>Challenge</h4><p>Make movement and collision results clear during play through visible thrust feedback, health changes, and outcome transitions.</p><h4>Related code</h4><div class="project-code-links"><a href="https://github.com/shaahinnn/Last-Descent/blob/main/Assets/Scripts/Movement.cs" target="_blank" rel="noopener noreferrer">Movement.cs</a><a href="https://github.com/shaahinnn/Last-Descent/blob/main/Assets/Scripts/CollisionHandler.cs" target="_blank" rel="noopener noreferrer">CollisionHandler.cs</a><a href="https://github.com/shaahinnn/Last-Descent/blob/main/Assets/Scripts/Oscillator.cs" target="_blank" rel="noopener noreferrer">Oscillator.cs</a><a href="https://github.com/shaahinnn/Last-Descent/blob/main/Assets/Scripts/GameSession.cs" target="_blank" rel="noopener noreferrer">GameSession.cs</a></div></div>
-                </div>
-                <div class="project-gallery" aria-label="Last Descent screenshot gallery"><a href="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/title-screen.png" target="_blank" rel="noopener noreferrer" aria-label="Open Last Descent screenshot: Title screen"><img src="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/title-screen.png" alt="Last Descent: Title screen" loading="lazy"></a><a href="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/gameplay-astronaut.png" target="_blank" rel="noopener noreferrer" aria-label="Open Last Descent screenshot: Colony exploration"><img src="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/gameplay-astronaut.png" alt="Last Descent: Colony exploration" loading="lazy"></a><a href="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/gameplay-dark-area.png" target="_blank" rel="noopener noreferrer" aria-label="Open Last Descent screenshot: Industrial area"><img src="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/gameplay-dark-area.png" alt="Last Descent: Industrial area" loading="lazy"></a></div>
-                <video class="project-video" controls preload="none" poster="https://raw.githubusercontent.com/shaahinnn/Last-Descent/main/Screenshots/gameplay-platforms.png" aria-label="Last Descent gameplay demo">
-                  <source src="https://github.com/shaahinnn/Last-Descent/releases/download/demo-v1.0/Last.Descent.mp4" type="video/mp4">
-                  Your browser does not support video playback.
-                </video>
-              </div>
-            </details>
           </article>
 
           <article class="project">
-            <a class="project-image" href="https://github.com/shaahinnn/Meet-Me-at-Dusk" target="_blank" rel="noopener noreferrer" aria-label="Open Meet Me at Dusk repository">
+            <a class="project-image" href="/projects/meet-me-at-dusk/" aria-label="View Meet Me at Dusk">
               <img src="https://raw.githubusercontent.com/shaahinnn/Meet-Me-at-Dusk/main/Screenshots/gameplay-hazards.png" alt="Pixel-art platforming challenge above spike pits in a medieval town at dusk" loading="lazy">
             </a>
             <div class="project-content">
               <div class="project-meta"><span class="project-type">2D · Pixel art</span><span class="project-number">04 / 04</span></div>
-              <h3>Meet Me at Dusk</h3>
+              <h3><a href="/projects/meet-me-at-dusk/">Meet Me at Dusk</a></h3>
               <p>A pixel-art platformer in a lantern-lit medieval town. Collect coins and treasure while crossing dangerous platforms and avoiding traps.</p>
-              <div class="project-actions"><a class="project-link" href="https://github.com/shaahinnn/Meet-Me-at-Dusk" target="_blank" rel="noopener noreferrer">Source <span aria-hidden="true">↗</span></a></div>
+              <a class="project-link project-open" href="/projects/meet-me-at-dusk/">View project <span aria-hidden="true">↗</span></a>
             </div>
-            <details class="project-details">
-              <summary>Technical breakdown, gallery &amp; demo</summary>
-              <div class="project-detail-body">
-                <div class="project-detail-columns">
-                  <div><h4>Gameplay systems</h4><ul><li>MovementControlNew reads movement and jump input, updates Rigidbody2D velocity, and switches the Animator between idle and walk.</li><li>Jumping is gated by contact with the Ground layer; coin and chest triggers update score and feedback.</li><li>Lift and trap interactions trigger their own animation, collider, audio, and game-over responses.</li></ul></div>
-                  <div><h4>Challenge</h4><p>Coordinate platforming controls with pickups, lift behavior, and hazards through separate gameplay components.</p><h4>Related code</h4><div class="project-code-links"><a href="https://github.com/shaahinnn/Meet-Me-at-Dusk/blob/main/Assets/Scripts/New/MovementControlNew.cs" target="_blank" rel="noopener noreferrer">New/MovementControlNew.cs</a><a href="https://github.com/shaahinnn/Meet-Me-at-Dusk/blob/main/Assets/Scripts/New/ChestCollect.cs" target="_blank" rel="noopener noreferrer">New/ChestCollect.cs</a><a href="https://github.com/shaahinnn/Meet-Me-at-Dusk/blob/main/Assets/Scripts/New/LiftManager.cs" target="_blank" rel="noopener noreferrer">New/LiftManager.cs</a><a href="https://github.com/shaahinnn/Meet-Me-at-Dusk/blob/main/Assets/Scripts/New/TrapDetect.cs" target="_blank" rel="noopener noreferrer">New/TrapDetect.cs</a></div></div>
-                </div>
-                <div class="project-gallery" aria-label="Meet Me at Dusk screenshot gallery"><a href="https://raw.githubusercontent.com/shaahinnn/Meet-Me-at-Dusk/main/Screenshots/title-screen.png" target="_blank" rel="noopener noreferrer" aria-label="Open Meet Me at Dusk screenshot: Title screen"><img src="https://raw.githubusercontent.com/shaahinnn/Meet-Me-at-Dusk/main/Screenshots/title-screen.png" alt="Meet Me at Dusk: Title screen" loading="lazy"></a><a href="https://raw.githubusercontent.com/shaahinnn/Meet-Me-at-Dusk/main/Screenshots/gameplay-town.png" target="_blank" rel="noopener noreferrer" aria-label="Open Meet Me at Dusk screenshot: Town exploration"><img src="https://raw.githubusercontent.com/shaahinnn/Meet-Me-at-Dusk/main/Screenshots/gameplay-town.png" alt="Meet Me at Dusk: Town exploration" loading="lazy"></a><a href="https://raw.githubusercontent.com/shaahinnn/Meet-Me-at-Dusk/main/Screenshots/gameplay-market.png" target="_blank" rel="noopener noreferrer" aria-label="Open Meet Me at Dusk screenshot: Market area"><img src="https://raw.githubusercontent.com/shaahinnn/Meet-Me-at-Dusk/main/Screenshots/gameplay-market.png" alt="Meet Me at Dusk: Market area" loading="lazy"></a></div>
-                <video class="project-video" controls preload="none" poster="https://raw.githubusercontent.com/shaahinnn/Meet-Me-at-Dusk/main/Screenshots/gameplay-hazards.png" aria-label="Meet Me at Dusk gameplay demo">
-                  <source src="https://github.com/shaahinnn/Meet-Me-at-Dusk/releases/download/demo-v1.0/Meet.me.at.the.dusk.mp4" type="video/mp4">
-                  Your browser does not support video playback.
-                </video>
-              </div>
-            </details>
           </article>
         </div>
       </div>
