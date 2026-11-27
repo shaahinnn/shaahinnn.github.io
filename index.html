@@ -161,11 +161,11 @@
     .project-video { display: block; width: 100%; max-height: 360px; border-radius: 10px; background: #080a0d; }    .achievement-card { padding: clamp(24px, 4vw, 40px); border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(135deg, rgba(183,243,106,.07), transparent 60%), var(--surface); }
     .achievement-card h2 { margin-bottom: 12px; }
     .achievement-card > p:last-child { max-width: 720px; margin: 0; color: var(--muted); }
-    .about-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(40px, 8vw, 100px); align-items: start; }
-    .about-copy { max-width: 610px; color: #b0bac6; font-size: 15px; line-height: 1.85; }
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 20px; align-items: start; }
+    .about-copy { max-width: 900px; color: #b0bac6; font-size: 15px; line-height: 1.85; }
     .about-copy p { margin-bottom: 18px; }
     .about-copy strong { color: var(--text); font-weight: 650; }
-    .about-side { display: grid; gap: 12px; }
+    .about-side { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .about-card { padding: 20px 21px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
     .about-card-label { margin-bottom: 7px; color: var(--soft); font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
     .about-card p { margin-bottom: 0; color: #e4e9ef; font-size: 14px; }
@@ -217,7 +217,8 @@
       .projects { grid-template-columns: 1fr; gap: 14px; }
       .project-detail-columns { grid-template-columns: 1fr; }
       .project p { min-height: auto; }
-      .about-grid { grid-template-columns: 1fr; gap: 25px; }
+      .about-grid { gap: 22px; }
+      .about-side { grid-template-columns: 1fr; }
       .opportunity { padding-bottom: 62px; }
       .opportunity-panel { display: block; }
       .opportunity-panel .button { margin-top: 22px; }
